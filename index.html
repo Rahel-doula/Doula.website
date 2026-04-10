@@ -3,161 +3,411 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Empathic Doula | Prenatal & Postpartum Support</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>The Empathic Doula | Serenity & Support | Toronto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* Modern Color Palette with feminine accent */
         :root {
-            --blush: #f4dada;
-            --deep-rose: #b5838d;
-            --text: #4a4a4a;
-            --light-bg: #fffafb;
+            --bg-color: #FFFBFB; /* Warm, soft ivory */
+            --primary-accent: #D4A5A5; /* Dusty rose */
+            --primary-text: #4A4040; /* Soft charcoal */
+            --light-bg: #F8EFEF; /* Very light pink */
             --white: #ffffff;
+            --stats-text: #FFFFFF;
         }
 
         * { box-sizing: border-box; }
-        body { font-family: 'Lato', sans-serif; margin: 0; color: var(--text); background-color: var(--white); line-height: 1.7; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--deep-rose); font-weight: 400; }
 
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: sticky; top: 0; background: var(--white); z-index: 100; border-bottom: 1px solid #eee; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--deep-rose); }
-        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text); font-size: 0.9rem; text-transform: uppercase; }
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--primary-text);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
 
-        /* Hero */
-        .hero { display: flex; align-items: center; padding: 80px 10%; background: var(--light-bg); min-height: 80vh; gap: 50px; flex-wrap: wrap; }
-        .hero-text { flex: 1; min-width: 300px; }
-        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-        .hero-image { flex: 1; min-width: 300px; text-align: center; }
-        .hero-image img { width: 100%; max-width: 400px; border-radius: 200px 200px 0 0; border: 10px solid var(--white); }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 { color: var(--primary-text); font-weight: 600; }
+        h2 { color: var(--primary-accent); }
+        h3 { font-style: italic; color: #6a6a6a; }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-text);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-accent);
+        }
+
+        /* 1. Header & Logo with diverse image in corner */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-diverse-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-accent);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary-accent);
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 400;
+        }
 
         /* Buttons */
-        .btn { display: inline-block; padding: 15px 30px; background: var(--deep-rose); color: white; text-decoration: none; border-radius: 5px; margin-right: 15px; transition: 0.3s; border: none; font-size: 1rem; cursor: pointer; }
-        .btn-alt { background: transparent; border: 1px solid var(--deep-rose); color: var(--deep-rose); }
-        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
 
-        /* Sections */
-        section { padding: 80px 10%; }
-        .center { text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .btn-alt {
+            background-color: transparent;
+            border: 2px solid var(--primary-accent);
+            color: var(--primary-accent);
+        }
 
-        /* Stats */
-        .stats { background: var(--deep-rose); color: white; display: flex; justify-content: space-around; flex-wrap: wrap; padding: 60px 10%; }
-        .stat-item h2 { color: white; font-size: 2.5rem; margin: 0; }
-        .stat-item p { margin: 5px 0; font-size: 0.9rem; max-width: 200px; }
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.8;
+            color: white;
+        }
 
-        /* Cards */
-        .card { background: var(--light-bg); padding: 30px; border-radius: 10px; border-top: 5px solid var(--deep-rose); }
+        /* 2. Hero Section - With Your Specific Rahel Image */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 6rem 10%;
+            background-color: var(--white);
+            min-height: 85vh;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
 
-        /* Form */
-        form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left; }
-        input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
+        .hero-text {
+            flex: 1.2;
+            min-width: 300px;
+        }
 
-        footer { background: #333; color: white; text-align: center; padding: 40px; }
-        footer a { color: var(--blush); text-decoration: none; margin: 0 10px; }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
 
-        @media (max-width: 768px) { .hero { padding-top: 40px; text-align: center; } .hero-text h1 { font-size: 2.5rem; } }
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        /* Your specific image filename, as displayed in browser */
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            object-fit: contain;
+        }
+
+        /* Section structure */
+        section {
+            padding: 6rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        /* 3. Middle Photo and Why Section */
+        .why-a-doula {
+            background-color: #fcf6f6;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .why-image {
+            flex: 1;
+        }
+
+        .why-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .why-text {
+            flex: 1.5;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        /* Statistics */
+        .statistics {
+            background-color: var(--primary-accent);
+            color: var(--stats-text);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .stat-item { padding: 20px; flex: 1; min-width: 200px;}
+        .stat-item h2 { font-size: 3.5rem; color: var(--stats-text); margin: 0; }
+        .stat-item p { margin: 5px 0; font-size: 0.9rem; }
+
+        /* Services */
+        .services-section { background-color: var(--white); }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: left;
+            border-top: 5px solid var(--primary-accent);
+        }
+
+        .service-card ul { padding-left: 1rem; color: #6a6a6a; }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background-color: var(--light-bg);
+            padding-bottom: 0; /* To connect with the photo */
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            text-align: left;
+        }
+
+        form { display: flex; flex-direction: column; gap: 15px; }
+
+        input, textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            background: var(--white);
+        }
+
+        /* 4. Woman with Baby Photo at Bottom */
+        .bottom-diverse-photo-container {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1603912181775-7af0bd8f870f?q=80&w=2000&auto=format&fit=crop') center/cover;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #332B2B;
+            color: var(--light-bg);
+            text-align: center;
+            padding: 4rem 10%;
+            margin-top: -100px; /* Slight overlap for styling */
+            position: relative;
+            z-index: 10;
+        }
+
+        footer p { font-size: 0.9rem; color: #EAD8D8; margin-bottom: 20px;}
+        footer a { color: var(--primary-accent); text-decoration: none; margin: 0 10px; font-size: 0.8rem; text-transform: uppercase;}
+
+        @media (max-width: 900px) {
+            .hero { padding: 4rem 5%; text-align: center;}
+            .hero-text h1 { font-size: 2.8rem; }
+            .why-a-doula { flex-direction: column-reverse; padding: 4rem 5%;}
+            .why-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">The Empathic Doula</div>
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#why">Why a Doula?</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+    <header>
+        <div class="logo-group">
+            <img src="https://images.unsplash.com/photo-1616422899479-7a5542a420b8?q=80&w=400&auto=format&fit=crop" alt="The Empathic Doula" class="logo-diverse-photo">
+            <div class="logo">The Empathic Doula</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Rahel</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why">Why a Doula?</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="hero">
-    <div class="hero-text">
-        <p style="text-transform: uppercase; letter-spacing: 2px;">Prenatal & Postpartum Support in Toronto</p>
-        <h1>A warm embrace for your journey into parenthood.</h1>
-        <p>Compassionate, evidence-based support helping Toronto families thrive through pregnancy and the postpartum period with confidence, peace, and care.</p>
-        <div style="margin-top: 30px;">
+    <section class="hero">
+        <div class="hero-text">
+            <p style="text-transform: uppercase; letter-spacing: 2px;">Prenatal & Postpartum Support in Toronto</p>
+            <h1>A warm embrace for your journey into parenthood.</h1>
+            <p>Providing compassionate, evidence-based, and inclusive support to help Toronto families thrive through pregnancy and the postpartum period.</p>
             <a href="#contact" class="btn">Book a Free Consultation</a>
-            <a href="#about" class="btn btn-alt">Meet Rahel</a>
+            <a href="#about" class="btn btn-alt" style="margin-left: 10px;">Meet Rahel</a>
         </div>
-    </div>
-    <div class="hero-image">
-        <img src="rahel.png" alt="Rahel - The Empathic Doula">
-    </div>
-</section>
-
-<section id="about">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 class="center">About Me</h2>
-        <h3 class="center" style="font-style: italic;">Hi, I'm Rahel.</h3>
-        <p>My path to becoming a doula began with my own birth story. When I welcomed my first child, I had the profound gift of being supported by a doula — and it changed everything. In what could have been an overwhelming experience, I felt calm, informed, and deeply cared for.</p>
-        <p>I knew then that I wanted to give other families that same feeling — that reassuring sense that you are not alone. Based in Toronto, I offer non-judgmental, inclusive, and evidence-based care.</p>
-    </div>
-</section>
-
-<section id="services" style="background-color: var(--light-bg);">
-    <h2 class="center">How I can support you</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Prenatal Support</h3>
-            <ul>
-                <li>Prenatal visits (in-person or virtual)</li>
-                <li>Pregnancy nutrition & wellness</li>
-                <li>Birth preference planning</li>
-            </ul>
+        <div class="hero-image">
+            <img src="rahel.png" alt="Rahel - The Empathic Doula" onerror="this.src='https://via.placeholder.com/450x500?text=Check+rahel.png.png+Filename';">
         </div>
-        <div class="card">
-            <h3>Postpartum Care</h3>
-            <ul>
-                <li>Newborn care education</li>
-                <li>Breast/chest-feeding support</li>
-                <li>Home & recovery support</li>
-            </ul>
+    </section>
+
+    <section id="about">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title">Hello & Welcome</h2>
+            <h3>Hi, I'm Rahel.</h3>
+            <p>My path to becoming a doula began with my own birth story. When I welcomed my first child, I had the profound gift of being supported by a doula — and it changed everything. In what could have been an overwhelming experience, I felt calm, informed, and deeply cared for.</p>
+            <p>I knew then that I wanted to give other families that same feeling — that reassuring sense that you are not alone, that someone is truly in your corner. My goal is to ensure you feel heard, informed, and deeply supported at every step of your journey.</p>
         </div>
-        <div class="card">
-            <h3>Postpartum Planning</h3>
-            <ul>
-                <li>Recovery planning</li>
-                <li>Village & resource mapping</li>
-                <li>Virtual or in-person sessions</li>
-            </ul>
+    </section>
+
+    <section id="why" class="why-a-doula">
+        <div class="why-image">
+            <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop" alt="Why choose a doula?">
         </div>
-    </div>
-</section>
+        <div class="why-text">
+            <h2>Your Journey, Grounded in Serenity</h2>
+            <p>Finding the right support allows you to navigate life’s most profound transitions with confidence. A doula doesn’t replace your team; they provide the dedicated presence that allows you to feel safe, heard, and empowered.</p>
+            <p>My approach centers inclusive, evidence-based care tailored to your unique family.</p>
+        </div>
+    </section>
 
-<section id="why" class="stats">
-    <div class="stat-item"><h2>83%</h2><p>Feel more confident as a new parent</p></div>
-    <div class="stat-item"><h2>50%</h2><p>Reduction in postpartum depression symptoms</p></div>
-    <div class="stat-item"><h2>74%</h2><p>Increase in breastfeeding success rates</p></div>
-</section>
+    <section class="statistics">
+        <div class="stat-item"><h2>83%</h2><p>Feel more confident as a new parent</p></div>
+        <div class="stat-item"><h2>50%</h2><p>Reduction in postpartum depression symptoms</p></div>
+        <div class="stat-item"><h2>74%</h2><p>Increase in breastfeeding success rates</p></div>
+    </section>
 
-<section id="testimonials">
-    <h2 class="center">Love Notes</h2>
-    <div class="grid">
-        <p><em>"Rahel's postpartum support was a lifeline. She didn't just care for our baby; she cared for us."</em><br><strong>- Letay</strong></p>
-        <p><em>"Her calm presence and wealth of knowledge made me feel so prepared and confident."</em><br><strong>- Sarah & Mark</strong></p>
-    </div>
-</section>
+    <section id="services" class="services-section">
+        <h2 class="section-title">How I can support you</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Prenatal Support</h3>
+                <p>Preparing you for the profound changes ahead through information, birth planning, and regular check-ins.</p>
+                <ul>
+                    <li>Prenatal visits (in-person or virtual)</li>
+                    <li>Pregnancy nutrition & wellness</li>
+                    <li>Birth preference mapping</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Postpartum Care</h3>
+                <p>Continuous support to help you rest, heal, and find your own rhythm as a new family.</p>
+                <ul>
+                    <li>Newborn care education</li>
+                    <li>Breast/chest-feeding support</li>
+                    <li>Home & recovery support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" class="center">
-    <h2>Start your journey</h2>
-    <p>Fill out the form below or email me at <strong>thempathicdoula@gmail.com</strong></p>
-    
-    <form action="https://formspree.io/f/mlgoygkv" method="post">
-        <input type="text" name="First Name" placeholder="First Name" required>
-        <input type="text" name="Last Name" placeholder="Last Name" required>
-        <input type="email" name="Email" placeholder="Email Address" required>
-        <input type="text" name="Due Date" placeholder="Estimated Due Date">
-        <textarea name="Message" rows="5" placeholder="How can I support you?"></textarea>
-        <button type="submit" class="btn">Send Inquiry</button>
-    </form>
-</section>
+    <section id="contact" class="contact">
+        <h2 class="section-title">Start your journey with Serenity</h2>
+        <div class="form-container">
+            <p>Finding the right doula is about connection. I offer a complimentary, no-obligation consultation to see if we are a good fit for your team. You can also email me at <strong>thempathicdoula@gmail.com</strong>.</p>
+            
+            <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+                <input type="text" name="First Name" placeholder="First Name" required>
+                <input type="text" name="Last Name" placeholder="Last Name" required>
+                <input type="email" name="Email" placeholder="Email Address" required>
+                <textarea name="Message" rows="5" placeholder="How can I support your journey?" required></textarea>
+                <button type="submit" class="btn">Send Inquiry</button>
+            </form>
+        </div>
+        
+        <div class="bottom-diverse-photo-container"></div>
+    </section>
 
-<footer>
-    <p>&copy; 2026 The Empathic Doula. Serving Toronto & the GTA.</p>
-    <div style="margin-top: 10px;">
-        <a href="#about">About</a> | <a href="#services">Services</a> | <a href="#contact">Contact</a>
-    </div>
-</footer>
+    <footer>
+        <p>&copy; 2026 The Empathic Doula. Serving Toronto & the GTA with Serenity and Support.</p>
+        <div>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
 
 </body>
 </html>
